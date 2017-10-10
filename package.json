@@ -1,0 +1,27 @@
+{
+  "name": "testTechnique",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "welid bouazizi",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-ruby-sass": "^1.0.1",
+    "gulp-sass": "^3.1.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-messages": "^1.6.6",
+    "angular-ui-router": "^0.4.3",
+    "bootstrap": "^3.*",
+    "jquery": "^3.2.1"
+  }
+}
