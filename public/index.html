@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Test App</title>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/rest.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+<div ng-controller="MainController as ctrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-pink bg-pink ">
+        <div class="container">
+            <a class="navbar-brand" href="#">Test technique</a>
+            <div >
+                <h2>Nombre d'article: {{ filteredWines.length }}</h2>
+            </div>
+        </div>
+    </nav>
+    <div class="clearfix"></div>
+
+    <div class="container bg-bloc">
+        <div class="row">
+            <div class="col col-lg-4 col-xs-12 filter" ng-repeat="(prop, ignored) in ctrl.wines[0]"  ng-init="ctrl.filter[prop] = {}"
+                 ng-if="(prop == 'region') || (prop == 'color') || (prop == 'domain')" >
+                <h3 class="title">{{ prop | capitalizeFirst }}</h3>
+                <div class="quarter" ng-repeat="value in ctrl.getValuesFor(prop)">
+                    <label>
+                        <input type="checkbox" ng-model="ctrl.filter[prop][value]"/>
+                        {{ value }}
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-12  portfolio-item"
+                 ng-repeat="wine in (ctrl.wines | filter:ctrl.filterByProperties) as filteredWines">
+                <div class="card-header">
+                    <div class="bloc">
+                        <h6 class=" text-inline">{{ wine.domain }}</h6>
+                        <h6 class=" text-inline">({{ wine.appellation }})</h6>
+                        <h6 class=" text-inline">{{ wine.millesime }}</h6>
+                    </div>
+                    <div class="bloc">
+                        <h1 class=" text-large">{{ wine.price_vp_bundle }}</h1>
+                    </div>
+                </div>
+                <div class="card h-100">
+                    <img class="card-img-top" src="images/img.jpg" alt="{{ wine.domain }}" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="py-5 bg-pink">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright © Test 2017</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+</body>
+</html>

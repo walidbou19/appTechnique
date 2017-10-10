@@ -1,0 +1,395 @@
+//colors
+$color_shark_approx: #212529;
+$white: #fff;
+$color_azure_radiance_approx: #007bff;
+$color_endeavour_approx: #0056b3;
+$color_oslo_gray_approx: #868e96;
+
+//fonts
+$font_0: sans-serif;
+$font_1: monospace;
+
+//@extend-elements
+//original selectors
+//abbr[title], abbr[data-original-title]
+%extend_1 {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+}
+
+//original selectors
+//sub, sup
+%extend_2 {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+//original selectors
+//input, button, select, optgroup, textarea
+%extend_3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+html {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  font-family: $font_0;
+  line-height: 1.15;
+  [type="button"] {
+  }
+}
+* {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: inherit;
+}
+*::before {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: inherit;
+}
+*::after {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: inherit;
+}
+@-ms-viewport {
+  width: device-width;
+}
+article {
+  display: block;
+}
+aside {
+  display: block;
+}
+dialog {
+  display: block;
+}
+figcaption {
+  display: block;
+}
+figure {
+  display: block;
+  margin: 0 0 1rem;
+}
+footer {
+  display: block;
+}
+header {
+  display: block;
+}
+hgroup {
+  display: block;
+}
+main {
+  display: block;
+}
+nav {
+  display: block;
+}
+section {
+  display: block;
+}
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: $color_shark_approx;
+  background-color: $white;
+}
+hr {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h5 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+abbr[title] {
+  @extend %extend_1;
+}
+abbr[data-original-title] {
+  @extend %extend_1;
+}
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit;
+}
+ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  ol {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  ul {
+    margin-bottom: 0;
+  }
+  ol {
+    margin-bottom: 0;
+  }
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+blockquote {
+  margin: 0 0 1rem;
+}
+dfn {
+  font-style: italic;
+}
+b {
+  font-weight: bolder;
+}
+strong {
+  font-weight: bolder;
+}
+small {
+  font-size: 80%;
+}
+sub {
+  @extend %extend_2;
+  bottom: -.25em;
+}
+sup {
+  @extend %extend_2;
+  top: -.5em;
+}
+a {
+  color: $color_azure_radiance_approx;
+  text-decoration: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  &:hover {
+    color: $color_endeavour_approx;
+    text-decoration: underline;
+  }
+  &:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+      outline: 0;
+    }
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+pre {
+  font-family: $font_1, $font_1;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+code {
+  font-family: $font_1, $font_1;
+  font-size: 1em;
+}
+kbd {
+  font-family: $font_1, $font_1;
+  font-size: 1em;
+}
+samp {
+  font-family: $font_1, $font_1;
+  font-size: 1em;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+area {
+  touch-action: manipulation;
+}
+button {
+  touch-action: manipulation;
+  @extend %extend_3;
+  overflow: visible;
+  text-transform: none;
+  &:focus {
+    outline: 1px dotted;
+  }
+}
+[role="button"] {
+  touch-action: manipulation;
+}
+input {
+  touch-action: manipulation;
+  @extend %extend_3;
+  overflow: visible;
+}
+label {
+  touch-action: manipulation;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+select {
+  touch-action: manipulation;
+  @extend %extend_3;
+  text-transform: none;
+}
+summary {
+  touch-action: manipulation;
+  display: list-item;
+}
+textarea {
+  touch-action: manipulation;
+  @extend %extend_3;
+  overflow: auto;
+  resize: vertical;
+}
+table {
+  border-collapse: collapse;
+}
+caption {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: $color_oslo_gray_approx;
+  text-align: left;
+  caption-side: bottom;
+}
+th {
+  text-align: left;
+}
+optgroup {
+  @extend %extend_3;
+}
+[type="reset"] {
+}
+[type="submit"] {
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+[type="button"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+[type="reset"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+input[type="radio"] {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="checkbox"] {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="date"] {
+}
+input[type="time"] {
+}
+input[type="datetime-local"] {
+}
+input[type="month"] {
+}
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button {
+}
+[type="search"]::-webkit-search-decoration {
+}
+::-webkit-file-upload-button {
+  font: inherit;
+}
+output {
+  display: inline-block;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none !important;
+}
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
